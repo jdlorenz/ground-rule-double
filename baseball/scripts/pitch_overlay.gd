@@ -1,6 +1,7 @@
 extends TileMapLayer
 
 @onready var strike_zone_overlay: TileMapLayer = $"../StrikeZoneOverlay"
+@onready var strike_zone: TileMapLayer = $"../StrikeZone"
 var previous_hovered_cells : Array = []
 var is_pitch_thrown : bool = false
 
@@ -34,18 +35,31 @@ func _hover(radius: float):
 
 		# Clear old highlights
 		for cell in previous_hovered_cells:
+			var source_id = strike_zone.get_cell_source_id(cell)
+			if source_id != -1:
+				var pitch_location_type = strike_zone.tile_set.get_source(source_id).resource_name
+				print(pitch_location_type)
+				Global.pitchTypeCounts[pitch_location_type]+=-1
 			strike_zone_overlay.erase_cell(cell)
 
 		# Apply highlights
 		for cell in hovered_cells:
-			var source_id = 1
+			var source_id = strike_zone.get_cell_source_id(cell)
+			if source_id != -1:
+				var pitch_location_type = strike_zone.tile_set.get_source(source_id).resource_name
+				print(pitch_location_type)
+				Global.pitchTypeCounts[pitch_location_type]+=1
+			source_id = 1
 			var atlas_coord = Vector2i(0,0)
 			strike_zone_overlay.set_cell(cell, source_id, atlas_coord)
-
+		
+		Global.totalPitchCoverage = len(hovered_cells)
 		previous_hovered_cells = hovered_cells
 		
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):
 		for cell in previous_hovered_cells:
-			strike_zone_overlay.erase_cell(cell)
+			var source_id = 2
+			var atlas_coord = Vector2i(0,0)
+			strike_zone_overlay.set_cell(cell, source_id, atlas_coord)
 			is_pitch_thrown = true

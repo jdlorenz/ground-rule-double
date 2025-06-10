@@ -32,10 +32,10 @@ func finalize_pitch_location(cells: Array):
 func _process(delta: float) -> void:
 	pass
 	
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("click"):
-		var mouse_pos: Vector2 = get_global_mouse_position()
-		var center_cell: Vector2i = local_to_map(to_local(mouse_pos))
-		var cells = get_cells_within_radius(center_cell, 6.2)
-		finalize_pitch_location(cells)
+#func _input(event: InputEvent) -> void:
+	#if Input.is_action_just_pressed("click"):
+		#var mouse_pos: Vector2 = get_global_mouse_position()
+		#var center_cell: Vector2i = local_to_map(to_local(mouse_pos))
+		#var cells = get_cells_within_radius(center_cell, 6.2)
+		#finalize_pitch_location(cells)
 		
