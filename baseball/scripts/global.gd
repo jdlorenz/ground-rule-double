@@ -5,6 +5,9 @@ var pitchTypeCounts: Dictionary = {
 	"lower_strike":0.0,
 	"ball":0.0
 }
+var pitchLocation: Vector2i
+var pitchGlobalLocation: Vector2i
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
