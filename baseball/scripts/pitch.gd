@@ -11,11 +11,11 @@ func _ready() -> void:
 func get_cells_within_radius(center: Vector2i, radius: float) -> Array:
 	var cells: Array = []
 
-	var min = -ceil(radius)
-	var max = ceil(radius)
+	var radius_min = -ceil(radius)
+	var radius_max = ceil(radius)
 
-	for x in range(min, max):
-		for y in range(min, max):
+	for x in range(radius_min, radius_max):
+		for y in range(radius_min, radius_max):
 			var offset = Vector2i(x, y)
 			if offset.length() <= radius:
 				cells.append(center + offset)
@@ -29,7 +29,7 @@ func finalize_pitch_location(cells: Array):
 		strike_zone.set_cell(cell, source_id, atlas_coord)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	
 #func _input(event: InputEvent) -> void:

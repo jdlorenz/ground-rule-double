@@ -8,11 +8,11 @@ var is_pitch_thrown : bool = false
 func get_cells_within_radius(center: Vector2i, radius: float) -> Array:
 	var cells: Array = []
 
-	var min = -ceil(radius)
-	var max = ceil(radius)
+	var radius_min = -ceil(radius)
+	var radius_max = ceil(radius)
 
-	for x in range(min, max):
-		for y in range(min, max):
+	for x in range(radius_min, radius_max):
+		for y in range(radius_min, radius_max):
 			var offset = Vector2i(x, y)
 			if offset.length() <= radius:
 				cells.append(center + offset)
@@ -56,7 +56,7 @@ func _hover(radius: float):
 		Global.totalPitchCoverage = len(hovered_cells)
 		previous_hovered_cells = hovered_cells
 		
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):
 		for cell in previous_hovered_cells:
 			var source_id = 2
