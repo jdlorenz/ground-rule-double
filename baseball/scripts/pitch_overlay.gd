@@ -56,6 +56,12 @@ func _hover(radius: float):
 		
 		Global.totalPitchCoverage = len(hovered_cells)
 		previous_hovered_cells = hovered_cells
+
+func baseball_appears():
+	baseball_sprite.position = Global.pitchGlobalLocation
+	baseball_sprite.visible = true
+	var tween := get_tree().create_tween()
+	tween.tween_property(baseball_sprite, "scale", Vector2(1, 1), 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):
@@ -69,5 +75,7 @@ func _input(event: InputEvent) -> void:
 		source_id = 3
 		strike_zone_overlay.set_cell(Global.pitchLocation, source_id, atlas_coord)
 		
-		baseball_sprite.position = Global.pitchGlobalLocation
-		baseball_sprite.visible = true
+		baseball_appears()
+		#baseball_sprite.position = Global.pitchGlobalLocation
+		#baseball_sprite.visible = true
+		
