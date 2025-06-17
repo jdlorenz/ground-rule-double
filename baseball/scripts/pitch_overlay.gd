@@ -76,6 +76,4 @@ func _input(event: InputEvent) -> void:
 		strike_zone_overlay.set_cell(Global.pitchLocation, source_id, atlas_coord)
 		
 		baseball_appears()
-		#baseball_sprite.position = Global.pitchGlobalLocation
-		#baseball_sprite.visible = true
 		
