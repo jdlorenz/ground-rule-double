@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="baseball"
-run/main_scene="res://pitch.tscn"
+run/main_scene="res://CardManager.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://scripts/global.gd"
+
+[display]
+
+window/vsync/vsync_mode=0
 
 [input]
 
