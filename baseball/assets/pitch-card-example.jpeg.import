@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgqf40ei1g2a7"
-path="res://.godot/imported/pitch-card-example.jpeg-4592a41e8adf4f859927f8c84151c0b0.ctex"
+path="res://.godot/imported/pitch-card-example.jpeg-965d3b9d955f6f2e5f86f7e36bf86ea2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pitch-card-example.jpeg"
-dest_files=["res://.godot/imported/pitch-card-example.jpeg-4592a41e8adf4f859927f8c84151c0b0.ctex"]
+source_file="res://Assets/pitch-card-example.jpeg"
+dest_files=["res://.godot/imported/pitch-card-example.jpeg-965d3b9d955f6f2e5f86f7e36bf86ea2.ctex"]
 
 [params]
 

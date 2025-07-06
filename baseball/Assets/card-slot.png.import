@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhmgb7q02q25f"
-path="res://.godot/imported/zone-navy-16.jpeg-a303173ac953fc0c750d173b16f32545.ctex"
+uid="uid://e7pjhd21fyob"
+path="res://.godot/imported/card-slot.png-f9bfd96bba951d3f45c5fb3e55b0f24a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/zone-navy-16.jpeg"
-dest_files=["res://.godot/imported/zone-navy-16.jpeg-a303173ac953fc0c750d173b16f32545.ctex"]
+source_file="res://Assets/card-slot.png"
+dest_files=["res://.godot/imported/card-slot.png-f9bfd96bba951d3f45c5fb3e55b0f24a.ctex"]
 
 [params]
 

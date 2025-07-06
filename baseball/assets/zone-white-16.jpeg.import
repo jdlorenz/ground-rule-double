@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4i3lx6t7kww2"
-path="res://.godot/imported/zone-white-16.jpeg-2100b3f07a33c2197e4b3be4f17f58e2.ctex"
+path="res://.godot/imported/zone-white-16.jpeg-d79d6712cd1145852267dc66edefc879.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/zone-white-16.jpeg"
-dest_files=["res://.godot/imported/zone-white-16.jpeg-2100b3f07a33c2197e4b3be4f17f58e2.ctex"]
+source_file="res://Assets/zone-white-16.jpeg"
+dest_files=["res://.godot/imported/zone-white-16.jpeg-d79d6712cd1145852267dc66edefc879.ctex"]
 
 [params]
 
