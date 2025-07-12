@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgqf40ei1g2a7"
-path="res://.godot/imported/pitch-card-example.jpeg-965d3b9d955f6f2e5f86f7e36bf86ea2.ctex"
+uid="uid://bc8oe2mpmejo5"
+path="res://.godot/imported/SwingCard.jpeg-22e1da744e5920a790db9ad5c286c83d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/pitch-card-example.jpeg"
-dest_files=["res://.godot/imported/pitch-card-example.jpeg-965d3b9d955f6f2e5f86f7e36bf86ea2.ctex"]
+source_file="res://Assets/SwingCard.jpeg"
+dest_files=["res://.godot/imported/SwingCard.jpeg-22e1da744e5920a790db9ad5c286c83d.ctex"]
 
 [params]
 
