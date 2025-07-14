@@ -3,6 +3,9 @@ extends Node2D
 const COLLISION_MASK_CARD = 1
 const COLLISION_MASK_CARD_SLOT = 2
 const DEFAULT_CARD_MOVE_SPEED = 0.1
+const DEFAULT_CARD_SCALE = 0.8
+const CARD_ENLARGE_SCALE = 0.85
+const CARD_SMALLER_SCALE = 0.6
 
 var screen_size
 var card_being_dragged 
@@ -25,16 +28,19 @@ func _process(delta: float) -> void:
 
 func start_drag(card):
 	card_being_dragged = card
-	card.scale = Vector2(1, 1)
+	card.scale = Vector2(DEFAULT_CARD_SCALE, DEFAULT_CARD_SCALE)
 			
 func finish_drag():
-	card_being_dragged.scale = Vector2(1.05, 1.05)
+	card_being_dragged.scale = Vector2(CARD_ENLARGE_SCALE, CARD_ENLARGE_SCALE)
 	var card_slot_found = raycast_check_for_card_slot()
 	if card_slot_found and not card_slot_found.card_in_slot:
+		card_being_dragged.scale = Vector2(CARD_SMALLER_SCALE, CARD_SMALLER_SCALE)
 		player_hand_reference.remove_card_from_hand(card_being_dragged)
 		card_being_dragged.position = card_slot_found.position
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		card_slot_found.card_in_slot = true
+		card_being_dragged.is_in_slot = true
+		card_being_dragged.z_index = -1
 	else:
 		player_hand_reference.add_card_to_hand(card_being_dragged, DEFAULT_CARD_MOVE_SPEED)
 	card_being_dragged = null
@@ -53,7 +59,7 @@ func on_hovered_over_card(card):
 		highlight_card(card, true)
 	
 func on_hovered_off_card(card): 
-	if !card_being_dragged:
+	if !card_being_dragged and !card.is_in_slot:
 		highlight_card(card, false)
 		var new_card_hovered = raycast_check_for_card()
 		if new_card_hovered:
@@ -63,10 +69,10 @@ func on_hovered_off_card(card):
 		
 func highlight_card(card, hovered):
 	if hovered:
-		card.scale = Vector2(1.05, 1.05)
+		card.scale = Vector2(CARD_ENLARGE_SCALE, CARD_ENLARGE_SCALE)
 		card.z_index = 2
 	else:
-		card.scale = Vector2(1, 1)
+		card.scale = Vector2(CARD_ENLARGE_SCALE, CARD_ENLARGE_SCALE)
 		card.z_index = 1
 	
 func raycast_check_for_card():
